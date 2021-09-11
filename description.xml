@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns="http://openoffice.org/extensions/description/2006" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <version value="1.5.1"/>
+    <identifier value="dk.gruwier.angryreviewer"/>
+    <dependencies>
+        <OpenOffice.org-minimal-version xmlns:d="http://openoffice.org/extensions/description/2006" d:name="OpenOffice.org 2.4" value="2.4"/>
+    </dependencies>
+    <!--<registration>
+        <simple-license accept-by="user" default-license-id="en-US" suppress-on-update="true" >
+            <license-text xlink:href="license.txt" lang="en-US" license-id="en-US" />
+        </simple-license>
+    </registration>-->
+</description>
