@@ -3,15 +3,15 @@
 Plugin provides style suggestions for academic and scientific text in a new document. It works with any text, but suggestions are even better with Latex files of scientific papers.
 This plugin is the offline version of the free web-service [AngryReviewer.com](https://www.angryreviewer.com). You can read about the rules used in the suggestion algorithm [here](https://www.angryreviewer.com/rules).
 
-![Screenshot](https://github.com/anufrievroman/vim-angry-reviewer/blob/main/screen.png)
+![Screenshot](https://github.com/anufrievroman/libreoffice-angryreviewer/blob/master/screen.png)
 
 ## Installation 
 
-Download `AngryReviewer.oxt` files from Releases and install as regular LibreOffice extension. Just double-click on the file should initiate installation.
+Download `AngryReviewer.oxt` file from [Releases](https://github.com/anufrievroman/libreoffice-angryreviewer/releases) and install as regular LibreOffice extension. Just a double-click on the file should initiate installation.
 
 ## Usage
 
-After installation, your should see the Angry Reviewer entry in the menu bar. Click it and suggestions should appear as a new document.
+After installation, your should see the "Angry Reviewer" entry in the menu bar. Click it and suggestions should appear as a new document.
 
 ## Feedback
 
