@@ -21,7 +21,8 @@ exceptions_list = set(['RESULTS', 'DISCUSSION', 'DISCUSSIONS','METHODS', 'JST',
     'INTRODUCTION', 'LIMMS', 'DNA', 'RNA', 'IIS', 'CREST', 'PRESTO', 'PNAS',
     'APL', 'ZT', 'LaTeX', 'MEMS', 'NEMS', 'AIP', 'AM', 'PM', 'AIDS', 'AC', 'DC',
     'CNRS', 'KAKENHI', 'APA', 'GaA', 'ErA', 'AlA', 'BA', 'BibTeX', 'APS', 'InA',
-    'LED', 'OLED', 'ACS', 'PhD', 'MIT', 'NASA', 'HIV', 'RAM', 'CPU', 'LCD', 'LED', 'OLED'])
+    'LED', 'OLED', 'ACS', 'PhD', 'MIT', 'NASA', 'HIV', 'RAM', 'CPU', 'LCD', 'LED',
+    'OLED', 'AFM', 'SEM', 'TEM', 'TDTR', 'COMSOL', 'APPOLO', 'ELMER', 'COVID'])
 
 overused_intro_dictionary = {
     'However': 'But or Yet',
@@ -34,6 +35,8 @@ overused_intro_dictionary = {
     'Moreover': 'Also',
     'Indeed': 'For example',
     'Furthermore': 'Also or Moreover',
+    'First': 'To begin',
+    'On the other hand': 'However, Yet, or But',
     }
 
 comma_after_list = [
@@ -86,11 +89,11 @@ british_dictionary = {
     'litre': 'liter',
     'tumour': 'tumor',
     'fibre': 'fiber',
-    'analogue': 'analog ',
+    'analogue ': 'analog ',
     'analogues': 'analogs',
-    'catalogue': 'catalog ',
+    'catalogues ': 'catalog ',
     'catalogues': 'catalogs',
-    'dialogue': 'dialog ',
+    'dialogue ': 'dialog ',
     'dialogues': 'dialogs',
     'homologue': 'homolog ',
     'analyse': 'analyze',
@@ -105,8 +108,10 @@ british_dictionary = {
     'offence': 'offense',
     'pretence': 'pretense',
     'fulfil': 'fulfill',
-    'enrol': 'enroll',
-    'distil': 'distill',
+    'enrol ': 'enroll ',
+    'enrols': 'enrolls',
+    'distil ': 'distill ',
+    'distils': 'distills',
     'instalment': 'installment',
     'labelled': 'labeled',
     'labelling': 'labeling',
@@ -178,7 +183,7 @@ very_dictionary = {
     'very significant': 'key, notable, substantial, noteworthy, momentous, major, vital',
     'very similar': 'alike, akin, analogous, comparable, equivalent',
     'very simple': 'easy, straightforward, effortless, uncomplicated',
-    'very small': 'tiny, minuscule, infinitesimal, microscopic, wee',
+    'very small': 'tiny, minuscule, infinitesimal, microscopic',
     'very smooth': 'flat, glassy, polished, level, even, unblemished',
     'very specific': 'precise, exact, explicit, definite, unambiguous',
     'very strange': 'weird, eerie, bizarre, uncanny, peculiar, odd',
@@ -196,8 +201,9 @@ bad_patterns_dictionary = {
 
     # Hype 
 
-    'excellent agreement': 'Usually, the agreement is actually not so excellent. Consider replacing with "good agreement" or better yet, quantify the agreement, e.g. "A agrees with B within 5% uncertainty".',
-    'excellent fit': 'Sometimes the fit is actually not so excellent. Consider quantifying the fit, e.g. "Line fits the data within 5% of uncertainty".',
+    'excellent agreement': 'Usually, the agreement is not so excellent. Consider replacing with "good agreement" or better yet, quantify the agreement, e.g. "A agrees with B within 5% uncertainty".',
+    'excellent fit': 'Often, the fit is not so excellent. Consider quantifying the fit, e.g. "Line fits the data within 5% of uncertainty".',
+    'comprehensive review': 'Consider if the review is really "comprehensive". More often than not it is hype.',
     'outstanding': 'The word "outstanding" might be considered hype. Consider alternatives, e.g. "remarkable".',
     'groundbreaking': 'The word "groundbreaking" might be considered hype. Consider alternatives, e.g. "remarkable".',
     'ground breaking': 'The word "groundbreaking" might be considered hype. Consider alternatives, e.g. "remarkable".',
@@ -221,17 +227,23 @@ bad_patterns_dictionary = {
     'it is known': 'It is known that phrases like "it is known" should be avoided. Often, it is not actually known to the readers. Just state the fact and supply a reference.',
     'are well known': 'It is well known that phrases with "are well known" are considered arrogant. Usually, is it not so well known to the reader. Consider removing it or at least supplying the references.',
     'is well known': 'It is well known that phrases with "is well known" are considered arrogant. Usually, is it not so well known to the reader. Consider removing it or at least supplying the references.',
-    'the first time': 'If "the first time" refers to the findings, consider if there is a better way to claim novelty of the work because such expressions are often considered hype and discouraged by journals. Try using verbs already suggesting the novelty, like "uncover", "invent", "resolve", "solve", "propose" etc.',
-    'the very first time': 'If "the very first time" refers to the findings, consider if there is a better way to claim novelty of the work because such expressions are often considered hype and discouraged by journals. Try using verbs already suggesting the novelty, like "uncover", "invent", "resolve", "solve", "propose" etc.',
+    'the first time': 'If "the first time" refers to the findings, try to find a better way to claim novelty of the work because such expressions are often considered hype and discouraged by journals. Try using verbs already suggesting the novelty, like "uncover", "invent", "resolve", "solve", "propose" etc.',
+    'the very first time': 'If "the very first time" refers to the findings, try to find a better way to claim novelty of the work because such expressions are often considered hype and discouraged by journals. Try using verbs already suggesting the novelty, like "uncover", "invent", "resolve", "solve", "propose" etc.',
 
     # Questionable patterns
 
-    'been attracting a great attention': 'Attracted attention is not necessarily a good motivation for research. Consider a stronger motivation.',
-    'attracted a great attention': 'Attracted attention is not necessarily a good motivation for research. Consider a stronger motivation.',
-    'attracted great attention': 'Attracted attention is not necessarily a good motivation for research. Consider a stronger motivation.',
-    'attracted attention': 'Attracted attention is not necessarily a good motivation for research. Consider a stronger motivation.',
+    'been attracting a great attention': 'Attracted attention is not necessarily a good motivation for research. Consider a stronger motivation. Moreover, this phrase is overused.',
+    'attracted a great attention': 'Attracted attention is not necessarily a good motivation for research. Consider a stronger motivation. Moreover, this phrase is overused.',
+    'attracted great attention': 'Attracted attention is not necessarily a good motivation for research. Consider a stronger motivation. Moreover, this phrase is overused.',
+    'attracted attention': 'Attracted attention is not necessarily a good motivation for research. Consider a stronger motivation. Moreover, this phrase is overused.',
     'One of the most': 'Consider rewriting it without "One of the most". According to the Elements of Style: "There is nothing wrong in this; it is simply threadbare and forcible-feeble."',
     'one of the most': 'Consider rewriting it without "one of the most". According to the Elements of Style: "There is nothing wrong in this; it is simply threadbare and forcible-feeble."',
+    'This shows': 'It might be unclear what "This" points to if the previous phrase was complicated. Rewrite with a more specific subject, e.g. "This trend shows".',
+    'This demonstrates': 'It might be unclear what "This" points to if previous phrase was complicated. Rewrite with a more specific subject, e.g. "This experiment demonstrates".',
+    'This proves': 'It might be unclear what "This" points to if the previous phrase was complicated. Rewrite with a more specific subject, e.g. "This experiment proves".',
+    'This is': 'It might be unclear what "This is" points to if the previous phrase was complicated. Rewrite with a more specific subject, e.g. "This value is".',
+    'This leads': 'It might be unclear what "This leads" points to if the previous phrase was complicated. Rewrite with a more specific subject, e.g. "This result leads".',
+    'et al ': 'Needs a period after "et al". For example "Alferov et al. showed".',
 
     # Spelling out the abbreviations
 
@@ -244,9 +256,9 @@ bad_patterns_dictionary = {
 
     'made a decision': 'Rewrite using the verb "decided" instead of zombie noun "decision".',
     'make a decision': 'Rewrite using the verb "decide" instead of zombie noun "decision".',
-    'performed the measurement': 'Rewrite using the verb "measured" instead of zombie noun "mesurement".',
-    'made the measurement': 'Rewrite using the verb "measured" instead of zombie noun "mesurement".',
-    'make the measurement': 'Rewrite using the verb "measure" instead of zombie noun "mesurement".',
+    'performed the measurement': 'Rewrite using the verb "measured" instead of zombie noun "measurement".',
+    'made the measurement': 'Rewrite using the verb "measured" instead of zombie noun "measurement".',
+    'make the measurement': 'Rewrite using the verb "measure" instead of zombie noun "measurement".',
     'take into consideration': 'Rewrite using the verb "consider" instead of zombie noun "consideration".',
     'is in agreement': 'Rewrite using the verb "agrees" instead of zombie noun "agreement".',
     'is in good agreement': 'Rewrite using the verb "agrees" instead of zombie noun "agreement".',
@@ -256,14 +268,21 @@ bad_patterns_dictionary = {
     'is an indication of': 'Rewrite using the verb "indicate" instead of zombie noun "indication".',
     'is indication of': 'Rewrite using the verb "indicate" instead of zombie noun "indication".',
     'are indication of': 'Rewrite using the verb "indicate" instead of zombie noun "indication".',
-    'have a tandency': 'Rewrite using the verb "tend" instead of zombie noun "tendency".',
-    'has a tandency': 'Rewrite using the verb "tends" instead of zombie noun "tendency".',
-    'have tandency': 'Rewrite using the verb "tend" instead of zombie noun "tendency".',
-    'has tandency': 'Rewrite using the verb "tends" instead of zombie noun "tendency".',
+    'have a tendency': 'Rewrite using the verb "tend" instead of zombie noun "tendency".',
+    'has a tendency': 'Rewrite using the verb "tends" instead of zombie noun "tendency".',
+    'have tendency': 'Rewrite using the verb "tend" instead of zombie noun "tendency".',
+    'has tendency': 'Rewrite using the verb "tends" instead of zombie noun "tendency".',
     'take into consideration': 'Rewrite using the verb "consider" instead of zombie noun "consideration".',
+    'indications of': 'Rewrite using the verb "indicate" instead of zombie noun "indications".',
+    'indication of': 'Rewrite using the verb "indicate" instead of zombie noun "indication".',
+    'suggestive of': 'Rewrite using the verb "suggest" instead of construction with "suggestive of".',
+    'indicative of': 'Rewrite using the verb "indicate" instead of construction with "indicative of".',
 
     # Inconcise expressions
 
+    ' is known to ': 'Try rewriting without vague "is known to", e.g. rewrite "A is known to cause B" as "A causes B".',
+    ' are known to ': 'Try rewriting without vague "are known to", e.g. rewrite "A are known to cause B" as "A causes B".',
+    'a variety of': 'Replace "a variety of" with shorter "various".',
     'by means of': 'Usually, "by means of" can be replaced with shorter "by" or "using".',
     'By means of': 'Usually, "By means of" can be replaced with shorter "By" or "Using".',
     'It is important to note': 'Consider replacing long "It is important to note" with just "Note".',
@@ -293,6 +312,7 @@ bad_patterns_dictionary = {
     'owning to the fact that': 'Consider replacing "owning to the fact that" with simple "since" or "because".',
     'In spite of the fact that': 'Consider replacing "In spite of the fact that" with simple "Although".',
     'in spite of the fact that': 'Consider replacing "in spite of the fact that" with simple "though".',
+    'in spite of ': 'Consider replacing "in spite of" with shorter "despite".',
     'Despite the fact that': 'Consider replacing "Despite the fact that" with simple "Although".',
     'despite the fact that': 'Consider replacing "despite the fact that" with simple "though".',
     'Considering the fact that': 'Consider replacing "Considering the fact that" with simple "Since" or "Because".',
@@ -308,8 +328,6 @@ bad_patterns_dictionary = {
     'due to the fact that': 'Consider replacing "due to the fact that" with simple "because".',
     'It is interesting to note that': 'Consider removing "It is interesting to note that". According to Craft of Scientific Writing: "If the detail is not interesting, then the writer should not include it".',
     ' the fact that': 'Consider replacing "the fact that" with just "that".',
-    ' PM in the afternoon': 'It is redundant to precise "in the afternoon" after "PM".',
-    ' AM in the morning': 'It is redundant to precise "in the morning" after "AM".',
     'as to whether': 'Consider shortening "as to whether" as just "whether".',
     'In order to': 'Consider shortening "In order to" as just "To".',
     'in order to': 'Consider shortening "in order to" as just "to".',
@@ -320,18 +338,15 @@ bad_patterns_dictionary = {
     'elevated temperature': 'Replace "elevated" with simpler "higher".',
     'conception': 'Consider replacing "conception" with "concept".',
     'the ways in which': 'Consider replacing "the ways in which" with a simple "how".',
-    'on the other hand': 'In some cases, might be appropriate to replace "on the other hand" with shorter "however" or "but".',
-    'On the other hand': 'In some cases, might be appropriate to replace "On the other hand" with shorter "However" or "But".',
+    'on the other hand': 'In some cases, you may replace "on the other hand" with shorter "however" or "but".',
+    'On the other hand': 'In some cases, you may replace "On the other hand" with shorter "However" or "But".',
     'for the purpose of': 'Consider replacing "for the purpose of" with shorter "for".',
     'For the purpose of': 'Consider replacing "For the purpose of" with shorter "For".',
     'For the reason that': 'Consider replacing "For the reason that" with shorter "Because" or "As".',
     'for the reason that': 'Consider replacing "for the reason that" with shorter "because" or "as".',
-    'not only': 'If you use a construction "A is not only B but also C", there might be a better way to phrase it, e.g. "A is B. Moreover, A is also C".',
+    'not only': 'If you are using the construction "A is not only B but also C", there might be a better way to phrase it, e.g. "A is B. Moreover, A is also C".',
     'in light of the fact that': 'Consider replacing "in light of the fact that" with simple "because".',
     'In light of the fact that': 'Consider replacing "In light of the fact that" with simple "Because".',
-    'indications of': 'Rewrite using the verb "indicate" instead of construction with "indications of".',
-    'indication of': 'Rewrite using the verb "indicate" instead of construction with "indications of".',
-    'suggestive of': 'Rewrite using the verb "suggest" instead of construction with "suggestive of".',
     'in the event that': 'Consider replacing "in the event that" with simple "if" or "when".',
     'In the event that': 'Consider replacing "In the event that" with simple "If" or "when".',
     'under circumstances in which': 'Consider replacing "under circumstances in which" with simple "if" or "when".',
@@ -372,12 +387,12 @@ bad_patterns_dictionary = {
     'subsequent to': 'Consider replacing "subsequent to" with simple "after".',
     'at the same time as': 'Consider replacing "at the same time as" with a simple "as".',
     'At the same time as': 'Consider replacing "At the same time as" with a simple "As".',
-    'the question as to whether': 'Consider replacing "the question as to whether" with a simple "whether".',
-    'The question as to whether': 'Consider replacing "The question as to whether" with a simple "Whether".',
+    'question as to whether': 'Consider replacing "the question as to whether" with a simple "whether".',
+    'question of whether': 'In "question of whether" you can omit "of".',
+    'question as to whether': 'Consider replacing "The question as to whether" with a simple "Whether".',
     'simultaneously with': 'Consider replacing "simultaneously with" with a simple "as".',
     'Simultaneously with': 'Consider replacing "Simultaneously with" with a simple "As".',
     'facilitate': 'Replace "facilitate" with simple "help". According to The Craft Of Scientific Writing: "Words such as facilitate are pretentious".',
-    'implement': 'Consider replacing "implement" with simpler "carry out".',
     'great many': 'Replace "great many" with just "many".',
     'Great many': 'Replace "Great many" with just "Many".',
     'large number of': 'Consider replacing "large number of" with just "many".',
@@ -417,8 +432,6 @@ bad_patterns_dictionary = {
     'gives an indication': 'Consider replacing "gives an indication" with shorter "shows".',
     'has an effect on': 'Consider replacing "has an effect on" with shorter "affects".',
     'have an effect on': 'Consider replacing "have an effect on" with shorter "affect".',
-    'have a tendency': 'Consider replacing "have a tendency" with shorter "tend".',
-    'has a tendency': 'Consider replacing "has a tendency" with shorter "tends".',
     'has the capacity to': 'Consider replacing "has the capacity to" with shorter "can".',
     'have the capacity to': 'Consider replacing "have the capacity to" with shorter "can".',
     'on a daily basis': 'Consider replacing "on a daily basis" with shorter "daily".',
@@ -477,18 +490,9 @@ bad_patterns_dictionary = {
     'obvious ': 'The word "obvious" is often misused in science and might describe something that is not so obvious. It also annoys readers. Consider removing it.',
     'strongly': 'The word "strongly" is often strongly misused to describe not so strong things. Strongly consider removing it and expressing the strength quantitatively, e.g. "42% stronger".',
     'strong ': 'The word "strong" is often misused to describe not so strong things. Consider if the usage here is appropriate.',
-    'significantly': 'The word "significantly" is often significantly misused in science. It might mean statistically significant or significant to the author, so the meaning is unclear. Consider removing it and describe significance quantitatively, e.g. "increased by 50%" or "50% different". Other alternatives: "substantially, notably"',
-    'significant ': 'The word "significant" is often misused in science. It might mean statistically significant or significant to the author, so the meaning is unclear. Consider removing it and writing about significance more quantitatively, e.g. "by 50%". Other alternatives: "substantial, notable"',
-    'This shows': 'It might be unclear what "This" points to if the previous phrase was complicated. Rewrite with a more specific subject, e.g. "This data show", "This dependence shows" etc.',
-    'This demonstrates': 'It might be unclear what "This" points to if previous phrase was complicated. Rewrite with a more specific subject, e.g. "This data show", "This dependence shows" etc.',
-    'This proves': 'It might be unclear what "This" points to if the previous phrase was complicated. Rewrite with a more specific subject, e.g. "This experiment proves".',
-    'This is': 'It might be unclear what "This is" points to if the previous phrase was complicated. Rewrite with a more specific subject, e.g. "This result is".',
-    'This leads': 'It might be unclear what "This leads" points to if the previous phrase was complicated. Rewrite with a more specific subject, e.g. "This result leads".',
-    'et al ': 'Needs a period after "et al". For example "Alferov et al. showed".',
-    ' while': 'It might be better to replace "while" with "whereas", unless it really happens simultaneously.',
-    ', while': 'Simple constructions like "A is white, while B is red" can be simplified as "A is white; B is red."',
-    'e.g. ': 'In American English "e.g." should be followed by a comma.',
-    'i.e. ': 'In American English "i.e." should be followed by a comma.',
+    'significantly': 'The word "significantly" is often significantly misused and vague. It might mean statistically significant or significant to the author. State significance quantitatively, e.g. "increased by 42%". Other alternatives: "substantially, notably"',
+    'significant ': 'The word "significant" is often misused and vague. It might mean statistically significant or significant to the author. State significance quantitatively, e.g. "by 42%". Other alternatives: "substantial, notable"',
+    # ' while': 'It might be better to replace "while" with "whereas", unless it really happens simultaneously. Simple phrases like "A is white, while B is red" can be simplified as "A is white; B is red."',
 
     # Random corrections
 
@@ -505,8 +509,8 @@ bad_patterns_dictionary = {
     ' data has': 'The word "data" is plural, double-check if "data has" is correct.',
     ' data shows': 'The word "data" is plural, double-check if "data shows" is correct.',
     ' 0 ': 'Simple numbers 0-10 are better to be spelled out, e.g. "five samples", "above zero", "equal to one".',
-    'and/or': 'Try to say it without "and/or". Often, just "and" or "or" is enough.',
-    'or/and': 'Try to say it without "or/end". Often, just "and" or "or" is enough.',
+    'and/or': 'Try to say it without "and/or" monstrosity. Often, just "and" or "or" is enough.',
+    'or/and': 'Try to say it without "or/end" monstrosity. Often, just "and" or "or" is enough.',
     'generate ': 'Verify that the verb "generate" really describes a generation process. Otherwise, consider replacing it with "cause".',
     'generated': 'Verify that the verb "generated" really describes a generation process. Otherwise, consider replacing it with "caused".',
     'generating': 'Verify that "generating" really describes a generation process. Otherwise, consider replacing it with "causing".',
@@ -541,9 +545,19 @@ bad_patterns_dictionary = {
     'has to have': 'Replace "have to have" with "must have" or "should have".',
     'everyone of ': 'Correct "everyone of" as "every one of".',
     ' an other ': 'Correct "an other" as "another".',
-    ' is comprised of ': 'Correct "is comprised of" as "comprases". The whole comprises its parts.',
+    ' is comprised of ': 'Correct "is comprised of" as "comprises". The whole comprises its parts.',
     ' onboard ': 'Correct "onboard" as "on-board".',
     ' cause and affect': 'Correct as "cause and affect" as "cause and effect".',
+    'carefully chosen': 'The word "carefully" does not add much here. The act of choice already implies some consideration.',
+    'carefully selected': 'The word "carefully" does not add much here. The act of selection already implies some consideration.',
+    'carefully select': 'The word "carefully" does not add much here. The act of selection already implies some consideration.',
+    'carefully choose': 'The word "carefully" does not add much here. The act of choice already implies some consideration.',
+    'low frequency range': 'Correct as "low-frequency".',
+    'high frequency range': 'Correct as "high-frequency".',
+    'high frequency vibration': 'Correct as "high-frequency".',
+    'low frequency vibration': 'Correct as "low-frequency".',
+    'high frequency phonon': 'Correct as "high-frequency".',
+    'low frequency phonon': 'Correct as "low-frequency".',
 
     # Numbers next to words
 
@@ -639,9 +653,12 @@ bad_patterns_dictionary = {
     "it's": 'If you mean "it is", it is better just to write "it is". Otherwise, it might need to be corrected as "its", e.g. "material and its properties".',
     'kind of': 'Consider kind of replacing "kind of" with "rather" or kind of avoiding it completely.',
     'pretty much': 'Consider pretty much deleting "pretty much".',
+    ' and so on.': 'Try to rewrite without "...and so on". It might be too informal and vague if other items in the list are unclear. Either list all important items or generalize the remaining, for example "Voyager flew past Mars, Jupiter, and other planets.',
+    ' and so forth': 'Try to rewrite without "...and so on". It might be too informal and vague if other items in the list are unclear. Either list all important items or generalize the remaining, for example "Voyager flew past Mars, Jupiter, and other planets.',
     'sort of': 'Consider sort of replacing "sort of" with "rather" or sort of avoiding it completely.',
     ' less ': 'Verify that "less" is not misused for "fewer" (e.g. "less time", but "fewer samples") or cannot be replaced with a more precise word like "thinner", "shorter", "weaker" etc.',
     ' very ': 'Consider if the word "very" is very very necessary. If the emphasis is required, use words strong in themselves or quantify the statement.',
+    ' these days.': 'These days we consider "these days" too informal. Consider omitting or using "recently".',
     'viewpoint': 'Consider replacing with "point of view".',
     "don't": "Most academic journals prefer do not instead of don't.",
     "isn't": "Most academic journals prefer is not instead of isn't.",
@@ -665,7 +682,6 @@ bad_patterns_dictionary = {
     'You ': 'Using "You" might be inappropriate in academic writing. Consider using "One", e.g. "One can see...".',
     'you ': 'Using "you" might be inappropriate in academic writing. Consider using "One", e.g. "One can see...".',
     'And ': 'Instead of starting this sentence with "And" try just removing it.',
-    ' things': 'The word "things" is rather vague, try to be more specific.',
     ' thing': 'The word "thing" is rather vague, try to be more specific.',
     'Dear Editor': 'Consider to address your dear editor by the real name.',
     'Dear editor': 'Consider to address your dear editor by the real name.',
@@ -719,7 +735,7 @@ bad_patterns_dictionary = {
     ' $^\circ$F': 'Degrees Fahrenheit should not be separated from the number with a space.',
     }
 
-# This list of cliches was taked from suspense.net:
+# This list of cliches was taken from suspense.net:
 # Web Page: http://suspense.net/whitefish/cliche.htm
 # Email: suspense@suspense.net 
 
@@ -1206,7 +1222,6 @@ cliche_list = set([
     "wild goose chase",
     "wild oats",
     "will wonders never cease",
-    "wimp",
     "win friends and influence people",
     "win one for the Gippe",
     "wnning is everything",
@@ -1248,9 +1263,12 @@ cliche_list = set([
     ])
 
 redundant_dictionary = {
+    'PM in the afternoon': 'PM',
+    'AM in the morning': 'AM',
     'necessary requirements': 'requirements',
     'necessary requirement ': 'requirement',
     'smaller in size': 'smaller',
+    'future candidate': 'candidate',
     'larger in size': 'larger',
     'bigger in size': 'bigger',
     'most unique': 'unique',
@@ -1284,6 +1302,9 @@ redundant_dictionary = {
     'basic fundamentals': 'fundamentals',
     'continue to remain': 'remain',
     'continues to remain': 'remains',
+    'remains still': 'remains',
+    'remain still': 'remain',
+    'still remain': 'remain',
     'currently being': 'being',
     'currently underway': 'underway',
     'empty space': 'space',
@@ -1524,25 +1545,13 @@ absolutes_exceptions = [
     ]
 
 
-def number_to_words(number):
-    '''Convert number into word'''
-    if number == 1:
-        word = "once"
-    elif number == 2:
-        word = "twice"
-    elif number > 2:
-        word = str(number)+" times"
-    else:
-        word = ''
-    return word
-
-
 def bad_patterns(line, index):
     '''Cross-check with the dictionary of known errors and suggest fixes'''
     mistakes = []
     for word in bad_patterns_dictionary:
         if word in line:
-            mistakes.append(f'Line {index + 1}. {bad_patterns_dictionary[word]}')
+            mistakes.append(
+                f'Line {index + 1}. {bad_patterns_dictionary[word]}')
     return mistakes
 
 
@@ -1551,7 +1560,8 @@ def comma_after(line, index):
     mistakes = []
     for word in comma_after_list:
         if word in line:
-            mistakes.append(f'Line {index + 1}. Might need a comma after "{word[:-1]}".')
+            mistakes.append(
+                f'Line {index + 1}. Might need a comma after "{word[:-1]}".')
     return mistakes
 
 
@@ -1560,15 +1570,20 @@ def phrases_with_very(line, index):
     mistakes = []
     for word in very_dictionary:
         if word in line:
-            mistakes.append(f'Line {index + 1}. Consider replacing "{word}" with words like "{very_dictionary[word]}" etc')
+            mistakes.append(
+                f'Line {index + 1}. Consider replacing "{word}" with words like "{very_dictionary[word]}" etc'
+            )
     return mistakes
 
 
 def start_with_numbers(line, index):
     '''Check if a non-empty line starts with a number'''
+    # Need to fix this function. It make many false positives if there is a reference list
     mistakes = []
     if line[0].isdigit():
-        mistakes.append(f'Line {index + 1}. Avoid starting sentences with numbers. Rewrite spelling out the number, e.g. "Five samples..."')
+        mistakes.append(
+            f'Line {index + 1}. Avoid starting sentences with numbers. Rewrite spelling out the number, e.g. "Five samples..."'
+        )
     return mistakes
 
 
@@ -1577,9 +1592,13 @@ def figure_references(line, index):
     mistakes = []
     if len(line) > 5:
         if 'Fig.' in line[0:4] or 'Figs.' in line[0:4]:
-            mistakes.append(f'Line {index + 1}. The word "Fig." in the beginning of a sentence can usually be spelled out, e.g. "Figure 1 shows"')
+            mistakes.append(
+                f'Line {index + 1}. The word "Fig." in the beginning of a sentence can usually be spelled out, e.g. "Figure 1 shows"'
+            )
         if 'Figure ' in line[7:]:
-            mistakes.append(f'Line {index + 1}. Most journals prefer shortening the word "Figure" as "Fig." if it is not opening the sentence.')
+            mistakes.append(
+                f'Line {index + 1}. Most journals prefer shortening the word "Figure" as "Fig." if it is not opening the sentence.'
+            )
     return mistakes
 
 
@@ -1588,10 +1607,16 @@ def numbers_next_to_units(line, index):
     mistakes = []
     for number in range(9):
         for unit in units_list:
-            if (f'{number}{unit} ' in line) or (f'{number}{unit}.' in line) or (f'{number}{unit},' in line):
-                mistakes.append(f'Line {index + 1}. Put a space between the digit {number} and the unit {unit}')
-        if (str(number)+' %' in line) or (str(number)+' \%' in line):
-            mistakes.append(f'Line {index + 1}. Percent sign "%" should follow numberals without a space, i.e. {number}%')
+            if (f'{number}{unit} ' in line) or (f'{number}{unit}.'
+                                                in line) or (f'{number}{unit},'
+                                                             in line):
+                mistakes.append(
+                    f'Line {index + 1}. Put a space between the digit {number} and the unit {unit}'
+                )
+        if (str(number) + ' %' in line) or (str(number) + ' \%' in line):
+            mistakes.append(
+                f'Line {index + 1}. Percent sign "%" should follow numberals without a space, i.e. {number}%'
+            )
     return mistakes
 
 
@@ -1601,19 +1626,23 @@ def elements(text):
     entire_text = unite_valid_lines(text)
     found_elements = []
     for element in elements_list:
-        occurance = entire_text.count(" "+element+" ")
+        occurance = entire_text.count(" " + element + " ")
         if 0 < occurance < 5:
             found_elements.append(element)
 
     # Advise is constructed depending on how many elements were found
     if len(found_elements) == 1:
-        mistakes.append(f'The symbol {found_elements[0]} occurs only a few times. Since most readers do not know how to read all chemical symbols, just write actual name of the element each time. For example "silicon wafer".')
+        mistakes.append(
+            f'The symbol {found_elements[0]} occurs only a few times. Since most readers do not know how to read all chemical symbols, just write actual name of the element each time. For example "silicon wafer".'
+        )
     if len(found_elements) > 1:
         output_string = found_elements[0]
         found_elements[-1] = ' and ' + found_elements[-1]
         for name in found_elements[1:]:
             output_string += f', {name}'
-        mistakes.append(f'The symbols {output_string} occur only a few times each. Since most readers do not know how to read all chemical symbols, just write actual names of the elements each time. For example "silicon wafer".')
+        mistakes.append(
+            f'The symbols {output_string} occur only a few times each. Since most readers do not know how to read all chemical symbols, just write actual names of the elements each time. For example "silicon wafer".'
+        )
     return mistakes
 
 
@@ -1624,27 +1653,35 @@ def abbreviations(text):
     all_abbreviations = re.findall(r"\b(?:[A-Z][a-z]?){2,}", entire_text)
     filtered_abbreviations = []
     for abbreviation in all_abbreviations:
-        trimmed_abbreviation = abbreviation[:-1] if abbreviation[-1] == 's' else abbreviation
+        trimmed_abbreviation = abbreviation[:-1] if abbreviation[
+            -1] == 's' else abbreviation
         filtered_abbreviations.append(trimmed_abbreviation)
     mistakes = []
 
     # Check how often each abbreviation occurs and comment if less than five
     found_abbreviations = []
     for unique_abbreviation in set(filtered_abbreviations):
-        if (unique_abbreviation not in elements_list) and (unique_abbreviation not in exceptions_list) and (unique_abbreviation not in units_list):
+        if (unique_abbreviation not in elements_list) and (
+                unique_abbreviation
+                not in exceptions_list) and (unique_abbreviation
+                                             not in units_list):
             occurance = filtered_abbreviations.count(unique_abbreviation)
             if 0 < occurance < 5:
                 found_abbreviations.append(unique_abbreviation)
 
     # Advise is constructed depending on how many abbreviations were found
     if len(found_abbreviations) == 1:
-        mistakes.append(f'The abbreviation {found_abbreviations[0]} occurs only a few times. Since abbreviations are hard to decrypt, just spell it out each time. It is easier to read a few words than to search for meanings of abbreviations.')
+        mistakes.append(
+            f'The abbreviation {found_abbreviations[0]} occurs only a few times. Since abbreviations are hard to decrypt, just spell it out each time. It is easier to read a few words than to search for meanings of abbreviations.'
+        )
     if len(found_abbreviations) > 1:
         output_string = found_abbreviations[0]
         found_abbreviations[-1] = ' and ' + found_abbreviations[-1]
         for name in found_abbreviations[1:]:
             output_string += f', {name}'
-        mistakes.append(f'The abbreviations {output_string} occur only a few times each. Since abbreviations are hard to decrypt, just spell them out each time. It is easier to read a few words than to search for meanings of abbreviations.')
+        mistakes.append(
+            f'The abbreviations {output_string} occur only a few times each. Since abbreviations are hard to decrypt, just spell them out each time. It is easier to read a few words than to search for meanings of abbreviations.'
+        )
     return mistakes
 
 
@@ -1652,8 +1689,11 @@ def in_conclusions(line, index, text):
     '''Check if we can skip In conclusions because there is already a title Conclusions'''
     mistakes = []
     if ('In conclusion') in line:
-        if (('Conclusion' or 'CONCLUSION') in text[index - 1]) or (('Conclusion' or 'CONCLUSION') in text[index - 2]):
-            mistakes.append(f'Line {index + 1}. This section seems to be already titled "Conclusions", thus you may omit "In conclusion" at the beginning.')
+        if (('Conclusion' or 'CONCLUSION') in text[index - 1]) or (
+            ('Conclusion' or 'CONCLUSION') in text[index - 2]):
+            mistakes.append(
+                f'Line {index + 1}. This section seems to be already titled "Conclusions", thus you may omit "In conclusion" at the beginning.'
+            )
     return mistakes
 
 
@@ -1663,11 +1703,15 @@ def british_spelling(line, index, english):
     if english == 'american':
         for word in british_dictionary:
             if word in line:
-                mistakes.append(f'Line {index + 1}. In American English, word "{word}" is spelled as "{british_dictionary[word]}".')
+                mistakes.append(
+                    f'Line {index + 1}. In American English, word "{word}" is spelled as "{british_dictionary[word]}".'
+                )
     if english == 'british':
         for word in british_dictionary:
             if british_dictionary[word] in line:
-                mistakes.append(f'Line {index + 1}. In British English, word "{british_dictionary[word]}" is spelled as "{word}".')
+                mistakes.append(
+                    f'Line {index + 1}. In British English, word "{british_dictionary[word]}" is spelled as "{word}".'
+                )
     return mistakes
 
 
@@ -1686,7 +1730,7 @@ def abstract_lenght(text):
     if abstract == "":
         for line in text:
             if "abstract{" in line:
-                abstract  = line[9:-1]
+                abstract = line[9:-1]
 
     # Check the abstract length and comment accordingly
     words = len(abstract.split())
@@ -1694,11 +1738,17 @@ def abstract_lenght(text):
     mistakes = []
     if len(abstract) > 1:
         if words > 150:
-            mistakes.append(f"Your abstract has {words} words or {symbols} characters. Many journals limit abstracts by 150 words only. Check if this is within limitations of your journal.")
+            mistakes.append(
+                f"Your abstract has {words} words or {symbols} characters. Many journals limit abstracts by 150 words only. Check if this is within limitations of your journal."
+            )
         elif words < 50:
-            mistakes.append(f"Your abstract has only {words} words or {symbols} characters. Seems a bit short.")
+            mistakes.append(
+                f"Your abstract has only {words} words or {symbols} characters. Seems a bit short."
+            )
         else:
-            mistakes.append(f"Your abstract has {words} words or {symbols} characters. It seems fine, but double-check if this is within limitations of your journal.")
+            mistakes.append(
+                f"Your abstract has {words} words or {symbols} characters. It seems fine, but double-check if this is within limitations of your journal."
+            )
     return mistakes
 
 
@@ -1707,12 +1757,14 @@ def title_lenght(text):
     title = ""
     for line in text:
         if "title{" in line:
-            title  = line[6:-1]
+            title = line[6:-1]
     words = len(title.split())
     symbols = len(title)
     mistakes = []
     if 1 < words > 15:
-        mistakes.append(f'Your title has {words} words or {symbols} characters. Consider making it shorter. Some journals limit the title by 15 words only.')
+        mistakes.append(
+            f'Your title has {words} words or {symbols} characters. Consider making it shorter. Some journals limit the title by 15 words only.'
+        )
     return mistakes
 
 
@@ -1741,18 +1793,24 @@ def references(text):
     if len(years) > 0:
         this_year = int(date.today().year)
         reference_ages = [this_year - year for year in years]
-        older_than_ten = 100*len([age for age in reference_ages if age > 10])//len(years)
-        older_than_five = 100*len([age for age in reference_ages if age > 5])//len(years)
-        if older_than_five > 50 or older_than_ten > 20 :
-            mistakes.append(f"Looks like {older_than_five}% of your references are older than five years and {older_than_ten}% are even older than ten years. Mostly old references might signal poor actuality of your work to journal editors. Try to use newer references.")
+        older_than_ten = 100 * len([age for age in reference_ages if age > 10 ]) // len(years)
+        older_than_five = 100 * len([age for age in reference_ages if age > 5 ]) // len(years)
+        if older_than_five > 50 or older_than_ten > 20:
+            mistakes.append(
+                f"Looks like {older_than_five}% of your references are older than five years and {older_than_ten}% are even older than ten years. Mostly old references might signal poor actuality of your work to journal editors. Try to use newer references."
+            )
         if len(references) > 50:
-            mistakes.append(f"You have {len(references)} references, while most journals allow maximum of 50. Check the guidelines to see how many your journal allows.")
+            mistakes.append(
+                f"You have {len(references)} references, while most journals allow maximum of 50. Check the guidelines to see how many your journal allows."
+            )
 
         # Analyse self-citation. Find authors and cross-check with references.
-        all_authors_lines = re.findall(r'\\author[\[\]abcdefg\* ,\d]*{[^}]+}', entire_text)
+        all_authors_lines = re.findall(r'\\author[\[\]abcdefg\* ,\d]*{[^}]+}',
+                                       entire_text)
         names = []
         for author_line in all_authors_lines:
-            author_line = re.sub(r'\\author[\[\]abcdefg,\d]*{', '', author_line)
+            author_line = re.sub(r'\\author[\[\]abcdefg,\d]*{', '',
+                                 author_line)
             author_line_splitted = author_line.split(',')
             for each_author in author_line_splitted:
                 each_author_splitter = each_author.split(' ')
@@ -1763,14 +1821,18 @@ def references(text):
                         names.append(name)
         selfcitations = 0
         for name in names:
-                for reference in references:
-                    if name.upper() in reference.upper():
-                        selfcitations += 1
-        selfcitation_percentage = 100*selfcitations//len(references)
+            for reference in references:
+                if name.upper() in reference.upper():
+                    selfcitations += 1
+        selfcitation_percentage = 100 * selfcitations // len(references)
         if 0 < selfcitation_percentage < 20:
-            mistakes.append(f"At least {selfcitations} out of {len(references)} references seems to be self-citations. This is acceptable, but keep it in check.")
+            mistakes.append(
+                f"At least {selfcitations} out of {len(references)} references seems to be self-citations. This is acceptable, but keep it in check."
+            )
         if selfcitation_percentage >= 20:
-            mistakes.append(f"At least {selfcitations} out of {len(references)} references seems to be self-citations. Consider if you need so many self-references, it might not look good.")
+            mistakes.append(
+                f"At least {selfcitations} out of {len(references)} references seems to be self-citations. Consider if you need so many self-references, it might not look good."
+            )
     return mistakes
 
 
@@ -1781,7 +1843,9 @@ def overcitation(line, index):
     for citation in all_citations:
         number_of_references = len(citation.split(','))
         if number_of_references > 4:
-            mistakes.append(f"Line {index}. There are {number_of_references} references in one place. Bloated references neither make the statement stronger nor help the reader. Consider reducing citations or just citing one review instead.")
+            mistakes.append(
+                f"Line {index}. There are {number_of_references} references in one place. Bloated references neither make the statement stronger nor help the reader. Consider reducing citations or just citing one review instead."
+            )
     return mistakes
 
 
@@ -1791,11 +1855,15 @@ def intro_patterns(text):
     entire_text = unite_valid_lines(text)
     for word in overused_intro_dictionary:
         occurance = entire_text.count(word)
-        occurance_percentage = occurance/len(entire_text.split(" "))
+        occurance_percentage = occurance / len(entire_text.split(" "))
         if (0.0012 < occurance_percentage < 0.002) and (occurance > 1):
-            mistakes.append(f'Sentences often start with {word}. Try alternatives like {overused_intro_dictionary[word]}.')
+            mistakes.append(
+                f'Sentences often start with {word}. Try alternatives like {overused_intro_dictionary[word]}.'
+            )
         if occurance_percentage > 0.002 and occurance > 1:
-            mistakes.append(f'Sentences start with {word} too often. Try alternatives like {overused_intro_dictionary[word]}.')
+            mistakes.append(
+                f'Sentences start with {word} too often. Try alternatives like {overused_intro_dictionary[word]}.'
+            )
     return mistakes
 
 
@@ -1823,7 +1891,9 @@ def redundancy(line, index):
     mistakes = []
     for word in redundant_dictionary:
         if word in line:
-            mistakes.append(f'Line {index + 1}. Replace likely redundant "{word}" with just "{redundant_dictionary[word]}".')
+            mistakes.append(
+                f'Line {index + 1}. Replace likely redundant "{word}" with just "{redundant_dictionary[word]}".'
+            )
     return mistakes
 
 
@@ -1832,7 +1902,9 @@ def negatives(line, index):
     mistakes = []
     for word in negatives_dictionary:
         if word in line:
-            mistakes.append(f'Line {index + 1}. Replace negative "{word}" with a more positive "{negatives_dictionary[word]}".')
+            mistakes.append(
+                f'Line {index + 1}. Replace negative "{word}" with a more positive "{negatives_dictionary[word]}".'
+            )
     return mistakes
 
 
@@ -1864,46 +1936,92 @@ def latex_best_practices(text):
             line = remove_latex_syntax(line)
             dots_in_line += line.count('.')
             useful_lines += 1
-    if dots_in_line/useful_lines > 1.2:
-        mistakes.append(f'In LaTeX, it is considered a best practice to start each sentence from a new line.')
+    if dots_in_line / useful_lines > 1.2:
+        mistakes.append(
+            f'In LaTeX, it is considered a best practice to start each sentence from a new line.'
+        )
     return mistakes
 
 
 def sentence_lenght(line, index):
-    '''Check is the sentences is too long'''
+    '''Check if the sentence is too long'''
     mistakes = []
     line = remove_latex_syntax(line)
     sentences = line.split('.')
     if any([len(sentence) > 240 for sentence in sentences]):
-        mistakes.append(f'Line {index + 1}. The sentence seems to be too long. Consider shortening or splitting it in two.')
+        mistakes.append(
+            f'Line {index + 1}. The sentence seems to be too long. Consider shortening or splitting it in two.'
+        )
     return mistakes
 
 
 def it_is_latex_text(text):
     '''Check if this is LaTeX document'''
     entire_text = unite_valid_lines(text)
-    it_is_latex_text = (('\\begin{document}' in entire_text) or ('\\documentclass' in entire_text))
+    it_is_latex_text = (('\\begin{document}' in entire_text)
+                        or ('\\documentclass' in entire_text))
     return it_is_latex_text
 
 
 def absolutes(line, index):
-    '''Checks for words like 'always' or 'never' but excepts exceptions'''
+    '''Check for words like 'always' or 'never' but except exceptions'''
     mistakes = []
     for num, word in enumerate(absolutes_dictionary):
-        not_exception = [exception not in line for exception in absolutes_exceptions[num]]
+        not_exception = [
+            exception not in line for exception in absolutes_exceptions[num]
+        ]
         if (word in line) and all(not_exception):
             mistakes.append(f'Line {index + 1}. {absolutes_dictionary[word]}')
     return mistakes
 
 
 def comparing_absolutes(line, index):
-    '''Checks if there are comperative absolutes like "nearly infinite"'''
-    all_absolutes = re.findall(r"((a little( bit)?|almost|astonishingly|completely|exceedingly|extremely|highly|incredibly|more than|nearly|partly|partially|quite|somewhat|totally|unbelievably|very) (dead|disappeared|false|gone|illegal|infinite|invaluable|legal|perfect|pervasive|pregnant|professional|true|whole|vanished))", line)
+    '''Check if there are comperative absolutes like "nearly infinite"'''
+    all_absolutes = re.findall(
+        r"((a little( bit)?|almost|astonishingly|completely|exceedingly|extremely|highly|incredibly|more than|nearly|partly|partially|quite|somewhat|totally|unbelievably|very) (dead|disappeared|false|gone|illegal|infinite|invaluable|legal|perfect|pervasive|pregnant|professional|true|whole|vanished))",
+        line)
     mistakes = []
     for phrase in all_absolutes:
         phrase = str(phrase[0])
         absolute = phrase.split(" ")[-1]
-        mistakes.append(f'Line {index + 1}. In "{phrase}" comprative degree is applied to an absolute. Usually, it is either {absolute} or not.')
+        mistakes.append(
+            f'Line {index + 1}. In "{phrase}" comprative degree is applied to an absolute. Usually, it is either {absolute} or not.'
+        )
+    return mistakes
+
+
+def in_the_name_of_law(line, index):
+    '''Check if names of laws mistakenly start with an article'''
+    pattern = re.compile("((T|t)he [^ ]*'s (law|distribution|equation|formula|wavelength|rule|limit|theory|radiation))")
+    all_matches = pattern.findall(line)
+    mistakes = []
+    for match in all_matches:
+        mistakes.append(f'Line {index + 1}. In "{match[0]}" probably no article "the" is needed.')
+    return mistakes
+
+
+def extreme_quantities(line, index):
+    '''Check if adjectives like big or small match the type of quantity'''
+    # Quantities that should be high or low:
+    pattern = re.compile("(big|large|small) ((conductivity|conductance|resistance|diffusivity)|(thermal|electrical|interface|boundary) \
+            (conductivity|conductance|resistance|diffusivity)|frequency|value|temperature|pressure|altitude)")
+    all_matches = pattern.findall(line)
+    mistakes = []
+    for match in all_matches:
+        mistakes.append(f'Line {index + 1}. Usually "{match[1]}" is high/low rather than "{match[0]}".')
+
+    # Quantities that should be long or short:
+    pattern = re.compile("(big|large|small) (wavelength|lifespan|length|period|time frame|time period\
+            |distance|path|mean free path|MFP)")
+    all_matches = pattern.findall(line)
+    for match in all_matches:
+        mistakes.append(f'Line {index + 1}. Usually "{match[1]}" is long/short rather than "{match[0]}".')
+
+    # Quantities that should be wide or narrow:
+    pattern = re.compile("(big|large|small) (range|spectrum)")
+    all_matches = pattern.findall(line)
+    for match in all_matches:
+        mistakes.append(f'Line {index + 1}. Usually "{match[1]}" is wide/narrow rather than "{match[0]}".')
     return mistakes
 
 
@@ -1912,26 +2030,39 @@ def cliches(line, index):
     mistakes = []
     for phrase in cliche_list:
         if phrase in line:
-            mistakes.append(f'Line {index + 1}. The phrase "{phrase}" is considered a cliché and should be avoided.')
+            mistakes.append(
+                f'Line {index + 1}. The phrase "{phrase}" is considered a cliché and should be avoided.'
+            )
+    return mistakes
+
+
+def numbers_with_s(line, index):
+    '''Check for number ending with 's like in 10's'''
+    mistakes = []
+    error = re.findall(r"\d's", line)
+    if error != []:
+        mistakes.append(
+            f"Line {index + 1}. Placing 's after a number might be a mistake. For example, these were 2000s with three 0s, and number 0's influence on 2000s' days was clear."
+        )
     return mistakes
 
 
 def main(text, english='american'):
-    '''This is the main function that runs all checks and returns the results to the web app'''
+    '''This is the main function that runs all checks and returns the results'''
     results = []
-    # Checks for LaTeX specific issues
+    # Checks for LaTeX-specific issues:
     if it_is_latex_text(text):
         results += title_lenght(text)
         results += abstract_lenght(text)
         results += references(text)
         results += latex_best_practices(text)
 
-    # General checks
+    # General checks:
     results += intro_patterns(text)
     results += elements(text)
     results += abbreviations(text)
 
-    # Checks for each line which is not a comment
+    # Checks for each line which is not a comment:
     for index, line in enumerate(text):
         if line_is_valid(line):
             results += bad_patterns(line, index)
@@ -1949,6 +2080,9 @@ def main(text, english='american'):
             results += sentence_lenght(line, index)
             results += comparing_absolutes(line, index)
             results += cliches(line, index)
+            results += numbers_with_s(line, index)
+            results += in_the_name_of_law(line, index)
+            results += extreme_quantities(line, index)
 
     if len(results) == 0:
         results = ["Looks like this text is perfect!"]
