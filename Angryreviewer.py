@@ -2010,8 +2010,7 @@ def extreme_quantities(line, index):
         mistakes.append(f'Line {index + 1}. Usually "{match[1]}" is high/low rather than "{match[0]}".')
 
     # Quantities that should be long or short:
-    pattern = re.compile("(big|large|small) (wavelength|lifespan|length|period|time frame|time period\
-            |distance|path|mean free path|MFP)")
+    pattern = re.compile("(big|large|small) (wavelength|lifespan|length|period|time frame|time period|distance|path|mean free path|MFP)")
     all_matches = pattern.findall(line)
     for match in all_matches:
         mistakes.append(f'Line {index + 1}. Usually "{match[1]}" is long/short rather than "{match[0]}".')
